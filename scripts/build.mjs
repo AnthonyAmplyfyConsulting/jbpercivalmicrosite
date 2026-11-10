@@ -10,7 +10,7 @@ const assets = Object.fromEntries(await Promise.all((await readdir('public')).ma
   '/' + name, [types[name.split('.').at(-1)], (await readFile('public/' + name)).toString('base64')]
 ])));
 await writeFile('dist/server/assets.js', 'export const assets = ' + JSON.stringify(assets) + ';');
-await Promise.all(['index.js', 'game.js'].map(file => copyFile('worker/' + file, 'dist/server/' + file)));
+await Promise.all(['index.js', 'game.js', 'hand-api.js'].map(file => copyFile('worker/' + file, 'dist/server/' + file)));
 await copyFile('.openai/hosting.json', 'dist/.openai/hosting.json').catch(error => {
   if (error.code !== 'ENOENT') throw error;
 });

@@ -191,15 +191,16 @@ async function move(action) {
     if (action === 'deal' && !hand) {
       // Load the saved revision only after Play. Opening the link always shows the intro.
       const saved = await fetch('/api/hand');
-      if (!saved.ok) throw new Error('The table could not connect. Try again.');
-      revision = (await saved.json())?.revision;
+      const previous = await saved.json().catch(() => null);
+      if (!saved.ok) throw new Error(previous?.error || 'The table could not connect. Try again.');
+      revision = previous?.revision;
     }
     const res = await fetch('/api/hand', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ action, revision })
     });
-    const body = await res.json();
+    const body = await res.json().catch(() => ({ error: 'The table could not connect. Try again.' }));
     if (res.status === 409) {
       await render(body.hand, false);
       byId('status').textContent = body.error;
