@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101927">
+  <meta name="description" content="A free hand of blackjack at J.B. Percival Co.">
+  <title>Blackjack · J.B. Percival Co.</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <main class="table" id="table">
+    <div class="scenery" aria-hidden="true">
+      <img class="felt-logo" src="/logo.png" alt="">
+      <svg class="felt-arc" viewBox="0 0 400 85" preserveAspectRatio="none"><path d="M-12 4 Q200 145 412 4"/></svg>
+    </div>
+    <header><button class="text-button" id="rules">Rules</button></header>
+    <section class="game" id="game" aria-label="Blackjack table" hidden>
+      <div class="hand dealer">
+        <h2 id="dealer-total">Dealer</h2>
+        <div class="cards" id="dealer"></div>
+      </div>
+      <div class="hand player">
+        <h2 id="player-total">Your hand</h2>
+        <div class="cards" id="player"></div>
+      </div>
+      <div class="actions" id="actions">
+        <button class="deco filled" id="hit"><span>Hit</span></button>
+        <button class="deco" id="stand"><span>Stand</span></button>
+        <button class="deco" id="reward-again" hidden><span>View reward</span></button>
+      </div>
+    </section>
+    <section class="intro" id="intro" aria-label="Play blackjack">
+      <div class="hero">
+        <div class="sign-wrap">
+          <div class="sign">
+            <div class="sign-inner"><h1>Blackjack</h1></div>
+          </div>
+          <img class="hero-logo" src="/logo.png" alt="J.B. Percival Co. Craft Cocktails">
+        </div>
+        <div class="hero-cards" id="hero-cards" aria-hidden="true"></div>
+      </div>
+      <button class="deco play" id="play"><span>Play a Hand</span></button>
+      <p class="free">Free to play</p>
+    </section>
+    <p class="status" id="status" role="status"></p>
+  </main>
+
+  <dialog id="rules-dialog" class="panel">
+    <div class="panel-inner">
+      <button class="close" aria-label="Close rules" data-close>×</button>
+      <p class="eyebrow">J.B. Percival Co.</p>
+      <h2>House Rules</h2>
+      <p>Get closer to 21 than the dealer without going over. Face cards count as 10. An ace counts as 1 or 11, whichever works best for your hand.</p>
+      <p>Hit to take a card, or stand to keep your total. The dealer draws to 16 and stands on every 17, including soft 17. A total of 21 ends your turn automatically.</p>
+      <p>An ace and a ten-value card on the opening deal is blackjack. If both hands have blackjack, it’s a push. This table uses one freshly shuffled 52-card deck per hand and plays with Hit and Stand.</p>
+      <dl class="reward-rules">
+        <div><dt>Blackjack</dt><dd>Free drink</dd></div>
+        <div><dt>Win</dt><dd>10% off</dd></div>
+        <div><dt>Loss or push</dt><dd>5% off</dd></div>
+      </dl>
+      <button class="deco" data-close><span>Back to table</span></button>
+    </div>
+  </dialog>
+
+  <dialog id="coupon" class="panel coupon" aria-labelledby="reward">
+    <div class="panel-inner">
+      <button class="close" aria-label="Close reward" data-close>×</button>
+      <img src="/logo.png" alt="J.B. Percival Co." class="coupon-logo">
+      <div class="coupon-feature">
+        <div>
+          <p id="outcome" class="eyebrow"></p>
+          <h2 id="reward"></h2>
+          <p class="coupon-welcome">A little something from the bar.</p>
+        </div>
+        <img class="coupon-cocktail" src="/cocktail.webp" alt="" decoding="async">
+      </div>
+      <div class="coupon-ticket">
+        <p id="reason"></p>
+        <div class="coupon-code"><small>Reward code</small><strong id="code"></strong></div>
+        <p class="demo-label">Preview coupon</p>
+      </div>
+      <button class="deco" id="replay"><span>Play again</span></button>
+    </div>
+  </dialog>
+</body>
+</html>

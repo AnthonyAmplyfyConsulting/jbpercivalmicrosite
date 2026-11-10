@@ -1,0 +1,6 @@
+CREATE TABLE hands (
+  id TEXT PRIMARY KEY,
+  revision INTEGER NOT NULL,
+  state TEXT NOT NULL,
+  updated INTEGER NOT NULL
+);

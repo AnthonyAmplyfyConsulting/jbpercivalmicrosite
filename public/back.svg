@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 142">
+ <defs>
+  <pattern id="dots" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".42" fill="#e9e6db" opacity=".65"/></pattern>
+  <g id="quarter" fill="none" stroke="#f0eddf" stroke-width=".83">
+   <path d="M12 16Q27 15 32 27T24 44Q15 43 16 34T27 31Q31 35 26 38M12 24Q24 19 28 26M14 43Q30 47 32 55T26 66Q20 67 19 60T27 56M13 49Q20 52 16 59T13 69M23 16Q29 22 36 18T47 20Q47 26 39 26M34 24Q37 33 42 36Q46 31 42 26M16 14l4 6-7 2M22 47l7 2-4 6M37 15l3 5 4-6"/>
+   <path d="M18 22q7 6 5 10q-5-2-5-10Zm13 19q9-6 12-4q-3 7-12 4Zm-12 5q-5 6 1 8q4-3-1-8Zm14 18q7-4 9 0q-4 6-9 0Z"/>
+   <circle cx="17" cy="16" r="2"/><circle cx="34" cy="31" r="2"/><circle cx="15" cy="49" r="1.7"/>
+  </g>
+  <g id="rays" stroke="#eee9dc" stroke-width=".6">
+   <path d="M50 17v20m-6-19 3 20m-9-17 6 18m-11-15 9 16m-15-11 12 14m-15-8 12 11m-16-5 14 9m-17-1 15 5m-17 3 15 3m-17 5 16 1"/>
+  </g>
+ </defs>
+ <rect width="100" height="142" rx="6" fill="#f0eddf"/>
+ <rect x="5" y="5" width="90" height="132" rx="3" fill="#182c4d"/>
+ <rect x="8" y="8" width="84" height="126" rx="1" fill="url(#dots)" stroke="#efeadd" stroke-width="1.5"/>
+ <rect x="11" y="11" width="78" height="120" fill="none" stroke="#efeadd" stroke-width=".65"/>
+ <use href="#quarter"/><use href="#quarter" transform="translate(100) scale(-1 1)"/><use href="#quarter" transform="translate(0 142) scale(1 -1)"/><use href="#quarter" transform="translate(100 142) scale(-1 -1)"/>
+ <use href="#rays"/><use href="#rays" transform="translate(100) scale(-1 1)"/><use href="#rays" transform="rotate(180 50 71)"/><use href="#rays" transform="translate(0 142) scale(1 -1)"/>
+ <ellipse cx="50" cy="71" rx="23" ry="36" fill="#182c4d" stroke="#eee9dc" stroke-width="1.5"/>
+ <ellipse cx="50" cy="71" rx="19.5" ry="32" fill="none" stroke="#eee9dc" stroke-width=".65"/>
+ <path d="m50 45 4 8-4 5-4-5zm0 39 4 5-4 8-4-8z" fill="#eee9dc"/>
+ <text x="50" y="76" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#eee9dc">JBP</text>
+</svg>
